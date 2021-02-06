@@ -12,10 +12,11 @@
  </p>
 
   <div class="column">
+    <div class="relative-position">
     <displayNoTasks v-if="!Object.keys(tasksTodo).length && !search" @showAddTask="showAddTask = true" ></displayNoTasks>
     <tasksToDo :tasksToDo="tasksTodo" v-else/>
     <tasksCompleted :tasksCompleted="tasksCompleted" />
-
+    </div>
   </div>
 
   <div  class="absolute-bottom text-center q-mb-lg" >

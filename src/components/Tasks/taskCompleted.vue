@@ -2,7 +2,7 @@
   <transition
     appear
     enter-active-class="animated zoomIn"
-    leave-active-class="animated zoomOut"
+    leave-active-class="animated zoomOut absolute-top"
   >
   <div class="q-mt-lg" >
   <q-list separator v-if="Object.keys(tasksCompleted).length" >
