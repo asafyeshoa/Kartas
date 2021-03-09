@@ -13,7 +13,6 @@ export default {
     }
     return taskSorted
   },
-
   tasksSorted: (state) => {
     let taskSorted = {},
       keysOrdered = Object.keys(state.tasks)
@@ -30,8 +29,6 @@ export default {
 
     return taskSorted
   },
-
-
   tasksTodo: (state, getters) => {
     let tasksFiltered = getters.tasksFiltered
     let tasks = {}
@@ -52,7 +49,7 @@ export default {
         tasks[key] = task
       }
     })
+
     return tasks
   }
-
 }

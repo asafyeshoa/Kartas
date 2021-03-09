@@ -9,6 +9,10 @@
           <taskName :name.sync="takeToSubmit.name" ref="modalTaskName"/>
         </div>
 
+        <div class="row q-mb-sm" >
+          <des :des.sync="takeToSubmit.des"  />
+        </div>
+
         <div class="row q-mb-sm">
           <taskDate :date.sync="takeToSubmit.dueDate" @clear="clearDueDate"/>
         </div>
@@ -16,6 +20,8 @@
         <div class="row q-mb-sm" v-if="takeToSubmit.dueDate">
           <taskTime v-if="takeToSubmit.dueDate" :time.sync="takeToSubmit.dueTime" @/>
         </div>
+
+
 
         <taskBtn/>
       </form>
@@ -27,7 +33,7 @@
 <script>
 
 import {mapActions} from 'vuex'
-import mixinTask from '../../mixins/mixin-add-edit-task'
+import mixinTask from '../../../mixins/mixin-add-edit-task'
 
 export default {
   mixins: [mixinTask],

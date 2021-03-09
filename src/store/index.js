@@ -2,7 +2,11 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 
-import tasks from './store-tasks'
+import tasks from './tasks'
+import settings from './settings'
+import auth from './auth'
+import chat from './chat'
+import nets from './nets'
 
 
 Vue.use(Vuex)
@@ -19,7 +23,11 @@ Vue.use(Vuex)
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      tasks
+      tasks,
+      settings,
+      auth,
+      chat,
+      nets
     },
 
     // enable strict mode (adds overhead!)

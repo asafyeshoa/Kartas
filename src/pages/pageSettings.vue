@@ -1,17 +1,16 @@
 <template>
-<div>
-  <div>
-    <p> Settings</p>
-  </div>
-</div>
+<q-page>
+  <settings/>
+</q-page>
 </template>
-
 <script>
+import settings from "components/Settings/settingsMain.vue";
+
 export default {
-  name: "pageSettings"
+  name: "pageSettings",
+  components:  {
+    settings
+  }
+
 }
 </script>
-
-<style scoped>
-
-</style>

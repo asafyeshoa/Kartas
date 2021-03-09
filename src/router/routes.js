@@ -5,9 +5,12 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/pageTodo.vue') },
-      { path: '/settings', component: () => import('pages/pageSettings.vue') },
+      { path: '/Settings', component: () => import('pages/pageSettings.vue') },
       { path: '/netCaulator', component: () => import('pages/pageCalculator.vue') },
-      { path: '/chat', component: () => import('pages/pageChat.vue') }
+      { path: '/chat', component: () => import('pages/pageChat.vue') },
+      { path: '/Settings/help', component: () => import('pages/pageHelp.vue') },
+      { path: '/auth', component: () => import('pages/pageAuth.vue') },
+      { path: '/chatingPage/:uid', component: () => import('pages/ChatingPage.vue') }
     ]
   },
 

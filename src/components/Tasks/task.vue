@@ -15,7 +15,7 @@
         <q-item-label :class="{ 'strike' : task.complete }"
                       v-html="$options.filters.searchHighlight(task.name, search)"></q-item-label>
         <q-item-label :class="{ 'strike' : task.complete }" caption>
-          Notify me about updates to apps or games that I downloaded
+          {{task.des}}
         </q-item-label>
       </q-item-section>
 
@@ -26,8 +26,8 @@
             <q-icon name="event" size="20px" class="q-mr-xs"/>
           </div>
           <div class="column">
-            <q-item-label class="row justify-end" caption>{{ task.dueTime }}</q-item-label>
             <q-item-label caption> {{ task.dueDate | niceDate }}</q-item-label>
+            <q-item-label class="row justify-end" caption>{{ taskDueTime }}</q-item-label>
           </div>
         </div>
       </q-item-section>
@@ -68,7 +68,7 @@
 
 <script>
 
-import {mapActions, mapState} from 'vuex'
+import {mapActions, mapState, mapGetters} from 'vuex'
 import {date} from 'quasar'
 
 export default {
@@ -81,7 +81,15 @@ export default {
     }
   },
   computed: {
-    ...mapState('tasks', ['search'])
+    ...mapState('tasks', ['search']),
+    ...mapGetters('settings', ['settings']),
+    taskDueTime() {
+
+      if (this.settings.show12HourTimeFormat) {
+        return date.formatDate(`${this.task.dueDate} ${this.task.dueTime}`, 'h:mmA')
+      }
+      return this.task.dueTime
+    }
   },
   methods: {
     ...mapActions('tasks', ['updateTask', 'deleteTask']),
@@ -101,14 +109,14 @@ export default {
       if (search) {
         let searchRegExp = new RegExp(search, 'i')
         return value.replace(searchRegExp, (match) => {
-            return '<span class="bg-yellow-6">' + match + '</span>'
+          return '<span class="bg-yellow-6">' + match + '</span>'
         })
       }
       return value
     }
   },
   components: {
-    'editTask': require('components/Modals/editTask').default,
+    'editTask': require('components/Tasks/Modals/editTask').default,
   }
 }
 </script>

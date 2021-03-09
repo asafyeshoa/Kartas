@@ -18,5 +18,6 @@ export default {
     'taskDate': require('components/Sherd/taskDate').default,
     'taskTime': require('components/Sherd/taskTime').default,
     'taskBtn': require('components/Sherd/taskBtn').default,
+    'des': require('components/Sherd/desInput').default,
   },
 }

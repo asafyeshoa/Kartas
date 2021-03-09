@@ -1,5 +1,5 @@
 <template>
-  <q-input outlined v-model="searchField" label="Search" counter class="col" @keyup.esc="searchField = ''" >
+  <q-input outlined v-model="searchField" label="Search" class="col" @keyup.esc="searchField = ''" >
     <template v-slot:prepend>
       <q-icon name="search" />
     </template>

@@ -1,12 +1,18 @@
 <template>
-<div>
-  <p> Chat</p>
-</div>
+  <q-page padding>
+    <userPage/>
+  </q-page>
 </template>
 
 <script>
+
+import userPage from "components/Chat/userPage";
+
 export default {
-  name: "pageChat"
+  name: "pageChat",
+  components: {
+    userPage
+  }
 }
 </script>
 

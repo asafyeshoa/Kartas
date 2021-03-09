@@ -21,3 +21,10 @@ export function setSearch(state, value) {
 export function setSort(state, value) {
   state.sort = value
 }
+export function setTasksDownloaded(state, value) {
+  state.taskDownloaded = value
+}
+
+export function clearTasks(state) {
+  state.tasks = {}
+}
